@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>当代大学生婚恋观调查</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<style>
+/* ── Pink Theme ── */
+:root {
+  --bg1: #1a0a14;
+  --bg2: #2d1225;
+  --pink: #FF6B9D;
+  --pink-light: #FFA6C9;
+  --rose: #C2185B;
+  --rose-dark: #880E4F;
+  --gold-rose: #FFAB91;
+  --white: #ffffff;
+  --light: #fce4ec;
+  --mid: #AD8A9E;
+  --card-bg: rgba(255,107,157,0.08);
+  --card-border: rgba(255,107,157,0.3);
+}
+
+.reveal {
+  background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, #1a0a14 100%);
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+.reveal .slides { text-align: center; }
+.reveal h1 {
+  color: var(--pink);
+  font-size: 2.8em;
+  font-weight: 700;
+  text-shadow: 0 2px 30px rgba(255,107,157,0.3);
+}
+.reveal h2 { color: var(--pink-light); font-size: 1.8em; margin-bottom: 0.3em; }
+.reveal h3 { color: var(--white); font-size: 1.4em; }
+.reveal h4 { color: var(--pink); font-size: 1.1em; margin: 0 0 0.3em; }
+.reveal p { color: var(--light); line-height: 1.7; }
+.reveal li { color: var(--light); }
+.reveal a { color: var(--pink); }
+
+.section-tag {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--rose);
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+.gold-bar {
+  width: 60px;
+  height: 3px;
+  background: var(--pink);
+  margin: 0.5em auto 1em;
+  border-radius: 2px;
+}
+.stat-badge {
+  display: inline-block;
+  margin: 0.2em 0.4em;
+  padding: 0.5em 1.2em;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  min-width: 100px;
+}
+.stat-num {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: var(--pink);
+  display: block;
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 0.8em;
+  color: var(--mid);
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1em 1.5em;
+  min-width: 180px;
+  flex: 1;
+}
+.card p { font-size: 0.85em; margin: 0; }
+.quote {
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--gold-rose);
+  border-left: 3px solid var(--pink);
+  padding: 0.5em 1em;
+  background: rgba(255,107,157,0.05);
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+.cite {
+  font-size: 0.65em;
+  color: var(--mid);
+  margin-top: 0.4em;
+}
+.reveal img.chart {
+  max-height: 52vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(194,24,91,0.15);
+  border: 1px solid rgba(255,107,157,0.1);
+}
+.highlight { color: var(--pink); font-weight: 700; }
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  justify-content: center;
+}
+.flex-col { text-align: left; flex: 1; }
+.flex-col-15 { flex: 1.5; }
+.flex-col-10 { flex: 1; }
+
+/* Stats quick reference */
+.stats-ref { display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+.stats-ref .card {
+  min-width: 160px;
+  padding: 1.2em 1em;
+  border-top: 4px solid;
+}
+.stats-ref .card h4 { font-size: 1.5em; margin: 0.2em 0; }
+
+/* grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-top: 0.8em;
+  text-align: left;
+}
+.grid-2 .card { padding: 0.8em 1.2em; }
+
+/* bottom bar */
+.footer {
+  position: absolute;
+  bottom: 0.8em;
+  left: 0;
+  right: 0;
+  color: var(--mid);
+  font-size: 0.5em;
+}
+
+/* decorative elements */
+.heart {
+  display: inline-block;
+  animation: heartbeat 2s infinite;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══ SLIDE 1: Cover ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 40%, #1a0a14 100%)">
+  <div class="heart" style="font-size: 2em; margin-bottom: 0.3em;">&#x1F497;</div>
+  <h1>"你……还向往吗？"</h1>
+  <h3 style="color: var(--pink-light); margin-top: 0.3em;">当代大学生婚恋观调查成果汇报</h3>
+  <div class="gold-bar" style="margin: 1em auto;"></div>
+  <p style="font-size: 0.9em; color: var(--mid);">174份问卷 + 40人深度访谈  |  2026年5月</p>
+  <p style="font-size: 0.7em; color: #665055; margin-top: 2.5em;">南京大学 · 思修社会实践项目</p>
+</section>
+
+<!-- ═══ SLIDE 2: Research Questions ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">01 研究问题</div>
+  <h2>当代大学生对婚恋的真实态度是什么？</h2>
+  <div class="gold-bar"></div>
+  <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-top: 0.8em;">
+    <div class="card" style="border-top: 4px solid var(--rose);">
+      <h4>Q1 现状</h4>
+      <p>对婚姻、对生育的态度如何？<br>婚育解绑了吗？</p>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--pink);">
+      <h4>Q2 影响因素</h4>
+      <p>性别、家庭、年级、网络……<br>谁在塑造婚恋观？</p>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--gold-rose);">
+      <h4>Q3 网络与现实</h4>
+      <p>网上的"不婚不育"叙事<br>与现实差距有多大？</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 3: Methods ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">02 研究方法</div>
+  <h2>混合方法设计</h2>
+  <div class="gold-bar"></div>
+  <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-top: 0.8em;">
+    <div class="card" style="border-top: 4px solid #4CAF50; min-width: 200px;">
+      <p style="font-size: 2em; font-weight: 800; color: #4CAF50; margin: 0.1em 0;">174</p>
+      <h4 style="color: #4CAF50;">问卷调查</h4>
+      <p>有效问卷 · 信度 &alpha;>0.83<br>覆盖南大、东大、上交等高校</p>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--pink); min-width: 200px;">
+      <p style="font-size: 2em; font-weight: 800; color: var(--pink); margin: 0.1em 0;">40</p>
+      <h4>深度访谈</h4>
+      <p>标准化8题核心题库<br>单身60% · 恋爱40%</p>
+    </div>
+    <div class="card" style="border-top: 4px solid #42A5F5; min-width: 200px;">
+      <p style="font-size: 2em; font-weight: 800; color: #42A5F5; margin: 0.1em 0;">5+</p>
+      <h4 style="color: #42A5F5;">文献研究</h4>
+      <p>茅倬彦(2024) · 于力超(2023)<br>计迎春(2025)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 4: Marriage Attitude ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="flex-row">
+    <div class="flex-col" style="text-align: left;">
+      <div class="section-tag">03 核心发现</div>
+      <h2 style="font-size: 1.5em; line-height: 1.3;">婚姻态度：<br>中等向往，已是可选项</h2>
+      <div class="gold-bar" style="margin-left: 0;"></div>
+      <div class="stat-badge"><span class="stat-num">48%</span><span class="stat-label">向往婚姻</span></div>
+      <div class="stat-badge"><span class="stat-num">71%</span><span class="stat-label">认同非必选</span></div>
+      <div class="quote" style="margin-top: 1em; font-size: 0.85em;">
+        "婚姻不应是束缚。你谈恋爱可能开心就好，但婚姻还要考虑生活方面的问题。"
+        <div class="cite">——软件工程大二学生，恋爱中</div>
+      </div>
+    </div>
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/1_婚姻态度分布.png" alt="婚姻态度分布">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 5: Birth Attitude ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">03 核心发现</div>
+  <h2>生育态度：明显偏低，顾虑系统化</h2>
+  <div class="gold-bar"></div>
+  <img class="chart" src="./可视化/2_生育态度与对比.png" alt="生育态度对比" style="max-height: 50vh;">
+  <p style="font-size: 0.8em; color: var(--mid); margin-top: 0.5em;">&#x1F4A1; 生育决策已从"要不要生"转变为"在什么条件下可以承担生育成本"的成本收益分析</p>
+</section>
+
+<!-- ═══ SLIDE 6: Gender Differences ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="flex-row">
+    <div class="flex-col" style="text-align: left;">
+      <div class="section-tag">04 影响因素</div>
+      <h2 style="font-size: 1.5em;">性别差异：<br>最显著的预测因子</h2>
+      <div class="gold-bar" style="margin-left: 0;"></div>
+      <div class="stat-badge"><span class="stat-num">35.2</span><span class="stat-label">男生态度总分</span></div>
+      <div class="stat-badge"><span class="stat-num">30.8</span><span class="stat-label">女生态度总分</span></div>
+      <p style="margin-top: 0.8em;"><span class="highlight">p=0.002</span> — 差异极显著</p>
+      <p style="font-size: 0.75em; color: var(--mid);">t=3.12, 随机概率仅0.2%</p>
+    </div>
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/3_性别差异雷达.png" alt="性别差异">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 7: Parent Marriage ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">04 影响因素</div>
+  <h2>父母婚姻质量：效应量最大的因素</h2>
+  <div class="gold-bar"></div>
+  <div class="flex-row">
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/5_父母婚姻质量影响.png" alt="父母婚姻质量">
+    </div>
+    <div class="flex-col" style="text-align: left; font-size: 0.9em;">
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.8em;">卡方=15.3</span><br>
+        <span class="stat-label">差异大到几乎不可能随机产生</span>
+      </div>
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.8em;">p&lt;0.001</span><br>
+        <span class="stat-label">随机巧合概率不到千分之一</span>
+      </div>
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.8em;">V=0.31</span><br>
+        <span class="stat-label">中等效应量，"有实际意义"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 8: Influence Sources ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="flex-row">
+    <div class="flex-col" style="text-align: left;">
+      <div class="section-tag">04 影响因素</div>
+      <h2 style="font-size: 1.5em;">影响源排序：<br>家庭是核心，网络非主力</h2>
+      <div class="gold-bar" style="margin-left: 0;"></div>
+      <div class="stat-badge" style="display: block; text-align: left;"><span class="stat-num" style="font-size: 1.8em;">40%</span> <span class="stat-label">父母/原生家庭</span></div>
+      <div class="stat-badge" style="display: block; text-align: left;"><span class="stat-num" style="font-size: 1.8em;">25%</span> <span class="stat-label">同辈/朋友</span></div>
+      <div class="stat-badge" style="display: block; text-align: left;"><span class="stat-num" style="font-size: 1.8em;">10%</span> <span class="stat-label">网络/社交媒体</span></div>
+      <div class="quote" style="margin-top: 1em; font-size: 0.8em;">83%接触网络婚恋内容<br>但仅10%视其为首要影响源</div>
+    </div>
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/4_影响来源气泡.png" alt="影响来源">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 9: Birth Concerns ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">03 核心发现</div>
+  <h2>生育顾虑：从经济到失衡的"顾虑链条"</h2>
+  <div class="gold-bar"></div>
+  <div class="flex-row">
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/6_生育顾虑瀑布.png" alt="生育顾虑">
+    </div>
+    <div class="flex-col" style="text-align: left;">
+      <p style="font-size: 1.1em;"><span class="highlight">53%</span> 的同学跟你一样担心经济压力</p>
+      <p>这不是个人能力问题<br>是系统性困境</p>
+      <div class="quote" style="font-size: 0.9em;">——你不孤单</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 10: Network Real Data ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">05 网络影响</div>
+  <h2>网络影响的真实数据</h2>
+  <div class="gold-bar"></div>
+  <img class="chart" src="./可视化/7_网络影响真实数据.png" alt="网络影响" style="max-height: 50vh;">
+  <p style="font-size: 0.75em; color: var(--mid); margin-top: 0.3em;">Pearson相关 r=-0.31, p&lt;0.01：高频接触负面内容者婚姻态度更低</p>
+</section>
+
+<!-- ═══ SLIDE 11: Grade & Region ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">04 影响因素</div>
+  <h2>年级与生源地：观念的分化</h2>
+  <div class="gold-bar"></div>
+  <img class="chart" src="./可视化/8_年级与生源地.png" alt="年级与生源地" style="max-height: 50vh;">
+  <p style="font-size: 0.75em; color: var(--mid);">&#x1F4A1; 城市学生并非"对婚姻更失望"，而是"对多样性选择接受度更高"</p>
+</section>
+
+<!-- ═══ SLIDE 12: Regression ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">04 影响因素</div>
+  <h2>线性回归模型：三个独立预测因子</h2>
+  <div class="gold-bar"></div>
+  <div class="flex-row">
+    <div class="flex-col-15">
+      <img class="chart" src="./可视化/9_回归森林图.png" alt="回归模型">
+    </div>
+    <div class="flex-col" style="text-align: left; font-size: 0.85em;">
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.6em;">R&sup2;=0.23</span><br>
+        <span class="stat-label">三个因素合起来能解释23%的差异</span>
+      </div>
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.6em;">F=12.8</span><br>
+        <span class="stat-label">模型整体有效</span>
+      </div>
+      <div class="stat-badge" style="display: block; text-align: left;">
+        <span class="stat-num" style="font-size: 1.6em;">p&lt;0.001</span><br>
+        <span class="stat-label">模型随机出现的概率不到千分之一</span>
+      </div>
+      <div style="margin-top: 0.5em; background: rgba(255,107,157,0.06); padding: 0.5em; border-radius: 8px; font-size: 0.8em; color: var(--mid);">
+        &#x1F4A1; 性别 &beta;=0.32 / 网络 &beta;=-0.24 / 学业 &beta;=-0.19<br>即使在男生内部，接触更多网络负面内容的人态度也显著更低
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 13: Stats Reference ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">统计速查卡</div>
+  <h2>p值到底是什么意思？</h2>
+  <div class="gold-bar"></div>
+  <div class="stats-ref">
+    <div class="card" style="border-top-color: #4CAF50;">
+      <p style="font-size: 1.8em; margin: 0;">&#x1F31F;</p>
+      <h4 style="color: #4CAF50;">p &lt; 0.05</h4>
+      <p style="font-size: 0.8em;">显著<br><span style="color: var(--mid);">95%把握不是随机误差</span></p>
+    </div>
+    <div class="card" style="border-top-color: #FF9800;">
+      <p style="font-size: 1.8em; margin: 0;">&#x1F31F;&#x1F31F;</p>
+      <h4 style="color: #FF9800;">p &lt; 0.01</h4>
+      <p style="font-size: 0.8em;">高度显著<br><span style="color: var(--mid);">99%把握结果真实</span></p>
+    </div>
+    <div class="card" style="border-top-color: #F44336;">
+      <p style="font-size: 1.8em; margin: 0;">&#x1F31F;&#x1F31F;&#x1F31F;</p>
+      <h4 style="color: #F44336;">p &lt; 0.001</h4>
+      <p style="font-size: 0.8em;">极其显著<br><span style="color: var(--mid);">随机概率不到千分之一</span></p>
+    </div>
+  </div>
+  <p style="margin-top: 1em; font-size: 0.6em; color: var(--mid);">本研究中：性别差异 p=0.002 &#x1F31F;&#x1F31F; | 父母婚姻质量 p&lt;0.001 &#x1F31F;&#x1F31F;&#x1F31F; | 生源地 p=0.013 &#x1F31F; | 年级 p=0.045 &#x1F31F;</p>
+</section>
+
+<!-- ═══ SLIDE 14: Quote ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div style="margin-top: -1em;">
+    <div class="heart" style="font-size: 1.5em; margin-bottom: 0.5em;">&#x1F497;</div>
+    <div class="quote" style="font-size: 1.8em; border-left: 4px solid var(--pink); padding-left: 0.8em; line-height: 1.4; text-align: center; border-left: none; border-bottom: 3px solid var(--pink); padding-bottom: 0.3em; border-radius: 0; display: inline-block;">
+      "我不是不想谈恋爱，<br>我是不想谈那种会让我很累的恋爱。"
+    </div>
+    <p style="margin-top: 1em; color: var(--pink); font-size: 1em;">—— 软件工程专业 大一学生</p>
+    <p style="font-size: 0.8em; color: var(--mid); margin-top: 1.5em; font-style: italic;">"这不是爱的消失，而是爱的理性化"</p>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 15: Practical Significance ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="section-tag">06 实践意义</div>
+  <h2>这组数据能帮你做什么？</h2>
+  <div class="gold-bar"></div>
+  <div class="grid-2" style="margin-top: 0.5em;">
+    <div class="card"><h4>01 破除信息茧房</h4><p style="font-size: 0.8em;">现实中的同龄人根本没有网上那么绝望</p></div>
+    <div class="card"><h4>02 理解影响来源</h4><p style="font-size: 0.8em;">观念主要来自父母和身边人——这本身就是觉醒</p></div>
+    <div class="card"><h4>03 性别理解框架</h4><p style="font-size: 0.8em;">差异不是"谁对谁错"，是减少误解的起点</p></div>
+    <div class="card"><h4>04 解构焦虑来源</h4><p style="font-size: 0.8em;">53%同样担心——这是系统性困境，不是你个人问题</p></div>
+    <div class="card" style="grid-column: span 2;"><h4>05 合法化多元选择</h4><p style="font-size: 0.8em;">你的选择代表了一代人的思考，你不是"异类"</p></div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 16: Closing ═══ -->
+<section style="background: linear-gradient(135deg, #1a0a14 0%, #2d1225 50%, #0d0510 100%);">
+  <h2 style="font-size: 2em; line-height: 1.4;">我们有资格追寻自己期望的<br>恋爱、婚姻与生育经历。</h2>
+  <div class="gold-bar" style="margin: 1em auto;"></div>
+  <p style="font-size: 1em; color: var(--mid); max-width: 80%; margin: 0 auto;">
+    但对于社会，最需要的不是每月100元的津贴，<br>
+    而是——在让人们明确婚育弊端的前提下，<br>
+    给出最大的保障，让人能够真正享受到婚育的美好。
+  </p>
+  <div style="margin-top: 1.5em; padding: 0.8em 2em; background: var(--pink); color: #fff; border-radius: 30px; font-weight: 700; display: inline-block; font-size: 1.1em; box-shadow: 0 4px 20px rgba(255,107,157,0.3);">
+    这代人不是不爱了，而是爱得更理性了
+  </div>
+</section>
+
+<!-- ═══ SLIDE 17: Thank You ═══ -->
+<section data-background="linear-gradient(135deg, #1a0a14 0%, #2d1225 100%)">
+  <div class="heart" style="font-size: 2.5em; margin-bottom: 0.3em;">&#x1F497;</div>
+  <h1 style="font-size: 3.5em;">感谢聆听</h1>
+  <div class="gold-bar" style="margin: 0.8em auto;"></div>
+  <p style="font-size: 1.2em; color: var(--light);">欢迎提问与讨论</p>
+  <p style="font-size: 0.65em; color: var(--mid); margin-top: 2em;">174份问卷 + 40人深度访谈  |  2026年5月  |  南京大学 · 思修社会实践</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  center: true,
+  hash: true,
+  transition: 'slide',
+  backgroundTransition: 'fade',
+  width: 1200,
+  height: 700
+});
+</script>
+</body>
+</html>
